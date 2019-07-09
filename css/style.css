@@ -1,0 +1,16 @@
+* {
+  background-color: lightgray;
+}
+
+ol {
+  color: blue;
+  font-style: italic
+}
+
+ul li a{ 
+  background-color: pink;
+}
+
+.teal {
+  color: teal;
+}
