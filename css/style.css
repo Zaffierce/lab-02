@@ -1,4 +1,4 @@
-* {
+/* * {
   background-color: lightgray;
 }
 
@@ -13,4 +13,62 @@ ul li a{
 
 .teal {
   color: teal;
+} */
+
+body {
+  background-color: darkgrey;
+}
+
+main {
+  padding: 5px;
+  width: 75%;
+  margin: auto;
+  border-style: dotted;
+  border-width: 1px;
+  background-color: teal;
+}
+
+header {
+  background-color: lightgray;
+  width: 85%;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  /* display: block; */
+}
+
+footer {
+  background-color: lightgray;
+  width: 85%;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  /* display: block; */
+}
+
+nav {
+  display: inline-block;
+}
+
+nav li {
+  display: inline;
+}
+
+.yes {
+  color: green;
+}
+
+.no {
+  color: red;
+}
+
+.question {
+  font-weight: bold;
+}
+
+.bonus {
+  border-style: solid;
+  border-width: 1px;
+  float: right;
+  margin-right: 25px;
 }
