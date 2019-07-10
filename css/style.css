@@ -1,20 +1,3 @@
-/* * {
-  background-color: lightgray;
-}
-
-ol {
-  color: blue;
-  font-style: italic
-}
-
-ul li a{ 
-  background-color: pink;
-}
-
-.teal {
-  color: teal;
-} */
-
 body {
   background-color: #092834;
 }
@@ -23,7 +6,6 @@ main {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 5px;
-  /* padding: 5px; */
   width: 75%;
   margin: auto;
   border-style: dotted;
@@ -38,7 +20,7 @@ header {
   margin: auto;
   border-style: solid;
   border-width: 1px;
-  /* display: block; */
+  color: #F7E3D4;
 }
 
 footer {
@@ -47,7 +29,7 @@ footer {
   margin: auto;
   border-style: solid;
   border-width: 1px;
-  /* display: block; */
+  color: #F7E3D4;
 }
 
 nav {
@@ -69,13 +51,53 @@ nav li {
 }
 
 .bonus {
-  margin-left: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 1px;
   font-style: italic;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 7px 7px 1px 1px rgba(84, 255, 147, .4);
 }
+
+/* .bonus-right {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 1px;
+  font-style: italic;
+  box-shadow: inset 5px 0px 20px -5px green;
+} */
 
 .questionAsked {
   text-decoration: underline;
+}
+
+.left-container {
+  clear: left;
+}
+
+.left-container-end {
+  clear: left;
+  padding-bottom: 75px;
+}
+
+.left-float {
+  float: left;
+  width: 50%; 
+}
+
+.right-container {
+  clear: right;
+}
+
+.right-container-end {
+  clear: right;
+  padding-bottom: 75px;
+}
+
+.right-float {
+  float: right;
+  width: 50%;
 }
 
 .question {
