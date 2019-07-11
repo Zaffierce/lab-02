@@ -60,14 +60,6 @@ nav li {
   box-shadow: 7px 7px 1px 1px rgba(84, 255, 147, .4);
 }
 
-/* .bonus-right {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 1px;
-  font-style: italic;
-  box-shadow: inset 5px 0px 20px -5px green;
-} */
-
 .questionAsked {
   text-decoration: underline;
 }
@@ -79,6 +71,11 @@ nav li {
 .left-container-end {
   clear: left;
   padding-bottom: 75px;
+}
+
+.left-container-end-index {
+  clear: left;
+  padding-bottom: 20px;
 }
 
 .left-float {
@@ -95,6 +92,11 @@ nav li {
   padding-bottom: 75px;
 }
 
+.right-container-end-index {
+  clear: right;
+  padding-bottom: 20px;
+}
+
 .right-float {
   float: right;
   width: 50%;
@@ -103,4 +105,10 @@ nav li {
 .question {
   font-weight: bold;
   text-decoration: none;
+}
+
+ol, ul {
+  display: inline-block;
+  list-style-type: circle; 
+  /* list-style-image: url('/images/14595-mid-wm-25px.png'); */
 }
