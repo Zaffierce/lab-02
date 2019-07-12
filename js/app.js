@@ -1,9 +1,14 @@
 'use strict';
 
+/*
+    Current issues:  Q7 currently does not return an alert if the food they input is wrong,
+                      it just continually loops through until it's hits the limit.
+*/
+
 var welcome = alert('Hi there and welcome to my page.\n\nBefore we continue, let\'s take this short quiz to see how well you know me.');
 
-var numOfCorrect = 0;
-var numOfQuestion = 1;
+var numOfCorrect = 0; //Defines our number of correct answers, which is used within the ... function
+var numOfQuestion = 1; //Defines our Question number which is used within the loop() function
 function loop(guessCounter, guessNum, question, answer, position, questionNum, bonusFact) {
   var endLoop = false;
 
@@ -11,11 +16,13 @@ function loop(guessCounter, guessNum, question, answer, position, questionNum, b
     var userAnswer = prompt(`What do you know about me?\n\n Question ${numOfQuestion}: ${question}`);
     for (var i = 0; i < answer.length; i++) {
       if (userAnswer.toLowerCase() === answer[i]) {
+        alert('You are correct!  Keep going with the quiz to get the rest of the story....');
         document.write(`<div class="${position}-container"><div class="${position}-float"><p class="questionAsked">${questionNum} question asked - <span class="question">${question}</span></p></div></div>`);
         document.write(`<div class="${position}-container"><div class="${position}-float"><p>You put "${userAnswer}" ... Survey says!  <span class="yes">Correct!</span>  My name is Jon!</p></div></div>`);
         document.write(`<div class="${position}-container-end"><div class="${position}-float"><p class="bonus">Bonus Fact:  ${bonusFact}</p></div></div>`);
         numOfCorrect++; //Adds to correct points
-        numOfQuestion++; // Adds to question #
+        numOfQuestion++; // Adds to question # if true
+        console.log(`Q# loop : ${numOfQuestion}`);
         endLoop = true;
         break;
       }
@@ -24,7 +31,8 @@ function loop(guessCounter, guessNum, question, answer, position, questionNum, b
   }
   if (guessCounter > guessNum) { //If our guessCounter (set above) is higher than guessNum (the limit of guesses allowed) then run this code
     endLoop = true;
-    numOfQuestion++;
+    numOfQuestion++; // Adds to the question # if failed
+    alert('You are incorrect!  But keep going with the quiz to get the rest of the story....');
     document.write(`<div class="${position}-container"><div class="${position}-float"><p class="questionAsked">${questionNum} question asked - <span class="question">${question}</span></p></div></div>`);
     document.write(`<div class="${position}-container-end"><div class="${position}-float"><p>You put "${userAnswer}" ... Survey says!  <span class="no">Incorrect!</span></p></div></div>`);
   }
@@ -98,10 +106,9 @@ question5();
 
 
 function loopNumber(guessCounter, guessNum, question, answer, position, questionNum, bonusFact, hintTooLow, hintClose, hintTooHigh) {
-  var numOfQuestion = 6; //How to grab it from the other loop I wonder...
-  var numOfCorrect = 0;
   var endLoop = false;
   var hint = 'It\'s a number between 1 and 10'; //default hint for prompt
+  var guessedNumbers = []; //empty array to store the numbers the user has guessed
 
   while (guessCounter < guessNum && endLoop === false) {
     var userAnswer = prompt(`What do you know about me?\n\n Question ${numOfQuestion}: ${question}\nHint:  ${hint}`);
@@ -110,46 +117,47 @@ function loopNumber(guessCounter, guessNum, question, answer, position, question
     } else {
       for (var i = 0; i < answer.length; i++) {
         if (userAnswer === answer[i]) {
+          alert('You are correct!  Keep going with the quiz to get the rest of the story....');
           document.write(`<div class="${position}-container"><div class="${position}-float"><p class="questionAsked">${questionNum} question asked - <span class="question">${question}</span></p></div></div>`);
           document.write(`<div class="${position}-container"><div class="${position}-float"><p>You put "${userAnswer}" ... Survey says!  <span class="yes">Correct!</span>  My name is Jon!</p></div></div>`);
           document.write(`<div class="${position}-container-end"><div class="${position}-float"><p class="bonus">Bonus Fact:  ${bonusFact}</p></div></div>`);
           numOfCorrect++;
+          numOfQuestion++;
           endLoop = true;
-          console.log(`# of correct: ${numOfCorrect}`);
-          console.log(`User Answer: ${userAnswer}`);
-          console.log(`Answer:  ${answer[i]}`);
           break;
         } else {
           if (userAnswer <= 1) {
             i++;
             hint = hintTooLow;
-            console.log(hint);
+            guessedNumbers.push(userAnswer);
           }
           if (userAnswer >= 2 && userAnswer <= 3) {
             i++;
             hint = hintClose;
-            console.log(hint);
+            guessedNumbers.push(userAnswer);
           }
           if (userAnswer >= 5 && userAnswer <= 9) {
             i++;
             hint = hintTooHigh;
-            console.log(hint);
+            guessedNumbers.push(userAnswer);
           }
           if (userAnswer >= 10) {
             i++;
-            console.log(hint);
-            //guessedNumbers.push(guessNum);     !!!!!!!TODO!!!!!!
+            guessedNumbers.push(userAnswer);
+            guessedNumbers.push(userAnswer);
           }
         }
         guessCounter++;
-        console.log(`Guess counter ${guessCounter}`);
       }
     }
-    if (guessCounter > guessNum) {
-      endLoop = true;
-      document.write(`<div class="${position}-container"><div class="${position}-float"><p class="questionAsked">${questionNum} question asked - <span class="question">${question}</span></p></div></div>`);
-      document.write(`<div class="${position}-container-end"><div class="${position}-float"><p>You put "${userAnswer}" ... Survey says!  <span class="no">Incorrect!</span></p></div></div>`);
-    }
+  }
+  guessCounter++;
+  if (guessCounter > guessNum) {
+    endLoop = true;
+    numOfQuestion++;
+    alert('You are incorrect!  But keep going with the quiz to get the rest of the story....');
+    document.write(`<div class="${position}-container"><div class="${position}-float"><p class="questionAsked">${questionNum} question asked - <span class="question">${question}</span></p></div></div>`);
+    document.write(`<div class="${position}-container-end"><div class="${position}-float"><p>You put "${guessedNumbers}" ... Survey says!  <span class="no">Incorrect!</span></p></div></div>`);
   }
 }
 
@@ -172,7 +180,7 @@ question6();
 
 function question7() {
   var questionNum = 'Seven'; // sets question number
-  var question = 'Can you guess my favorite food?'; // my question
+  var question = 'Can you guess my favorite food?  Hint:  Think of Japanese dishes'; // my question
   var answer = ['miso ramen', 'fried rice', 'karage chicken', 'sushi'];
   var bonusFact = `My other favorite foods are ${answer}!`; // bonus fact
   var position = 'left'; // float position
@@ -181,3 +189,9 @@ function question7() {
   loop(guessCounter, guessNum, question, answer, position, questionNum, bonusFact);
 }
 question7();
+
+
+function finished() {
+  alert(`You scored a ${numOfCorrect} out of ${numOfQuestion-1}`); //numOfQuestion-1 due to the loop always adding, so if it's the last question it still adds to the count.
+}
+finished();
