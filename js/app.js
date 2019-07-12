@@ -191,5 +191,7 @@ function question7() {
 question7();
 
 
+function finished() {
+  alert(`You scored a ${numOfCorrect} out of ${numOfQuestion-1}`); //numOfQuestion-1 due to the loop always adding, so if it's the last question it still adds to the count.
 }
 finished();
