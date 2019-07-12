@@ -188,15 +188,15 @@ if (favFoodsTrue === false) {
 
 document.write('Congratulations, you\'ve compleleted my short quiz!  Out of '+numOfQuestion+' questions possible, you scored a ' +numCorrect+'.')
 if (numCorrect === 7) {
-  document.write('<br>Perfect Score!');
+  document.write('<br>Amazing Score!');
 } else { 
   if (numCorrect <= 6 && numCorrect >=5) {
-    document.write('<br>Close, but you should try again to see if you can get all 7!');
+    document.write('<br>Close, you should try again to see if you can get all 7!');
   } 
   if (numCorrect <=4 && numCorrect >= 2) {
     document.write('<br>You scored pretty low.  I think you can do better.');
   }
   if (numCorrect < 1) {
-    document.write('<br>You scored pretty bad.  You should try again!');
+    document.write('<br>You scored extremely low.  You should try again!');
   }
 }
