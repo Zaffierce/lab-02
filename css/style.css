@@ -108,6 +108,7 @@ nav li {
 }
 
 ol, ul {
+  padding-left: 20px;
   display: inline-block;
   list-style-type: circle; 
   /* list-style-image: url('/images/14595-mid-wm-25px.png'); */
