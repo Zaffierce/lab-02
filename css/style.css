@@ -1,31 +1,28 @@
 body {
-  background-color: #092834;
+  background-color: #224021;
 }
 
 main {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 5px;
-  width: 75%;
+  width: 85%;
   margin: auto;
   border-style: dotted;
   border-width: 1px;
-  background-color: #F7E0D4;
+  background-color: #5F8C4A;
   display: block;
 }
 
 header {
-  background-color: #1461B8;
-  width: 77%;
-  margin: auto;
-  border-style: solid;
-  border-width: 1px;
-  color: #F7E3D4;
-}
-
-footer {
-  background-color: #1461B8;
-  width: 77%;
+  /* background-color: #592C22; */
+  background-image: url('../images/nav_bg1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 89%;
+  height: 200px;
   margin: auto;
   border-style: solid;
   border-width: 1px;
@@ -33,11 +30,25 @@ footer {
 }
 
 nav {
+  position: absolute;
   display: inline-block;
+  height: 50px;
+  width: 200px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
 }
 
 nav li {
   display: inline;
+}
+
+nav img {
+  float: left;
+  background-color: black;
+  /* opacity: 0.5; */
 }
 
 .yes {
@@ -65,12 +76,12 @@ nav li {
 }
 
 .left-container {
-  clear: left;
+  clear: left
 }
 
 .left-container-end {
   clear: left;
-  padding-bottom: 75px;
+  padding-bottom: 20px;
 }
 
 .left-container-end-index {
@@ -79,8 +90,19 @@ nav li {
 }
 
 .left-float {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.6;
+  padding: 10px;
+  margin-left: 5px;
   float: left;
-  width: 50%; 
+  width: 60%; 
+  background-color: #F7E0D4;
+}
+
+.left-float img {
+  float: left;
+  padding-right: 10px;
+  border-radius: 20%;
 }
 
 .right-container {
@@ -89,7 +111,7 @@ nav li {
 
 .right-container-end {
   clear: right;
-  padding-bottom: 75px;
+  padding-bottom: 20px;
 }
 
 .right-container-end-index {
@@ -98,8 +120,18 @@ nav li {
 }
 
 .right-float {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.6;
+  padding: 10px;
+  margin-right: 10px;
   float: right;
-  width: 50%;
+  width: 60%; 
+  background-color: #F7E0D4;
+}
+
+.right-float ul{
+  padding-left: 20px;
+  list-style-type: circle;
 }
 
 .question {
@@ -107,9 +139,37 @@ nav li {
   text-decoration: none;
 }
 
-ol, ul {
+.jimny ul {
   padding-left: 20px;
   display: inline-block;
   list-style-type: circle; 
-  /* list-style-image: url('/images/14595-mid-wm-25px.png'); */
+  /* list-style-image: url('/images/Jimny.png'); */
+}
+
+.left-float ul{
+  padding-left: 20px;
+  /* list-style-type: disc; */
+}
+
+.disc {
+  list-style-type: disc;
+}
+
+.circle {
+  list-style-type: circle;
+}
+
+.quizButton {
+  background-color: #F7E0D4;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+footer {
+  background-color: #1461B8;
+  width: 77%;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  color: #F7E3D4;
 }
